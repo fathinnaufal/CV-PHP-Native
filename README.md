@@ -1,4 +1,4 @@
-# website-company-profile
+# website-curicculum-vitae
 Apa yang perlu dilakukan?
 1. Import data companyprofile.sql ke database yang kamu punya
 2. Ubah koneksi ke di folder inc/inc_koneksi.php. Di variabel $host, $user, $pass $db, sesuaikan dengan koneksi yang kamu punya
