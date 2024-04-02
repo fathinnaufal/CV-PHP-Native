@@ -1,33 +1,52 @@
-<?php include_once("inc_header.php") ?>
-<!-- untuk home -->
+<?php
+// Di dalam file PHP (misalnya, index.php)
+include_once("inc_header.php");
+
+// Ambil data dari PHP dan simpan dalam variabel JavaScript
+echo '<script>';
+echo 'var gambarUrl = "' . ambil_gambar('8') . '";';
+echo 'var kutipan = "' . ambil_kutipan('8') . '";';
+echo 'var judul = "' . ambil_judul('8') . '";';
+echo 'var isi = "' . maximum_kata(ambil_isi('8'), 65) . '";';
+echo '</script>';
+?>
+
+<!-- Isi HTML -->
 <section id="home">
-    <img src="<?php echo ambil_gambar('8') ?>" />
+    <img src="<?php echo ambil_gambar('8') ?>" class="animated-image" />
     <div class="kolom">
         <p class="deskripsi"><?php echo ambil_kutipan('8') ?></p>
         <h2><?php echo ambil_judul('8') ?></h2>
-        <?php echo maximum_kata(ambil_isi('8'), 30) ?>
-        <p><a href="<?php echo buat_link_halaman('8') ?>" class="tbl-pink">Pelajari Lebih Lanjut</a></p>
+        <?php echo maximum_kata(ambil_isi('8'), 65) ?>
+        <p><a href="<?php echo buat_link_halaman('8') 
+        ?>" 
+        class="tbl-biru">Selengkapnya</a></p>
     </div>
 </section>
 
-<!-- untuk courses -->
-<section id="courses">
+<!-- Skrip JavaScript -->
+<script src="script.js"></script>
+
+
+<!-- untuk karir -->
+<section id="home">
     <div class="kolom">
         <p class="deskripsi"><?php echo ambil_kutipan('9') ?></p>
         <h2><?php echo ambil_judul('9') ?></h2>
-        <?php echo maximum_kata(ambil_isi('9'), 30) ?>
-        <p><a href="<?php echo buat_link_halaman('9') ?>" class="tbl-biru">Pelajari Lebih Lanjut</a></p>
+        <?php echo maximum_kata(ambil_isi('9'), 65) ?>
+        <p><a href="<?php echo buat_link_halaman('9') ?>" class="tbl-biru">Selengkapnya</a></p>
     </div>
-    <img src="<?php echo ambil_gambar('9') ?>" />
+    <img src="<?php echo ambil_gambar('9') ?>" 
+    class="animated-image" />
 </section>
 
 <!-- untuk tutors -->
 <section id="tutors">
     <div class="tengah">
         <div class="kolom">
-            <p class="deskripsi">Our Top Tutors</p>
-            <h2>Tutors</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, optio!</p>
+            <p class="deskripsi"></p>
+            <h2>My Certified</h2>
+            <p>Harry Agustanto S.H., M.H. adalah seorang profesional yang memiliki sertifikasi sebagai Certified Risk Governance Professional (CRGP) dari BNSP RI, Certification in Audit Committee Practices (CACP) dari Ikatan Komite Audit Indonesia, Associate Certified Coach (ACC) dari International Coaching Federation, Certified Professional Human Resources Management (CPHRM), Certified Trainer NLP (CTNLP), Certification in Lead Auditor ISO 9001 QMS, dan Certified Fraud Auditing.</p>
         </div>
 
         <div class="tutor-list">
@@ -55,9 +74,9 @@
 <section id="partners">
     <div class="tengah">
         <div class="kolom">
-            <p class="deskripsi">Our Top Partners</p>
-            <h2>Partners</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni tempore expedita sequi. Similique rerum doloremque impedit saepe atque maxime.</p>
+            <p class="deskripsi"></p>
+            <h2>Knowledge</h2>
+            <p>Harry Agustanto S.H., M.H., adalah seorang profesional hukum yang telah melengkapi pendidikan tinggi dengan meraih gelar S-1 (Sarjana Hukum) dan S-2 (Magister Hukum) dari Fakultas Hukum Universitas Indonesia, menggabungkan pengetahuan mendalam dengan pengalaman praktis untuk memberikan kontribusi yang berarti dalam berbagai konteks profesional</p>
         </div>
 
         <div class="partner-list">

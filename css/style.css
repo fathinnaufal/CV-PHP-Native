@@ -16,8 +16,44 @@ body {
     position: relative;
 }
 
+#home img {
+    max-width: 35%; /* Gambar akan mengikuti lebar maksimum dari container parent */
+    height: auto; /* Menghindari distorsi proporsi gambar */
+    display: block; /* Mengatasi spasi tambahan di bagian bawah gambar */
+   padding-bottom: -10%;
+    margin: 0 auto; /* Membuat gambar berada di tengah container jika lebar tidak mencapai 100% */
+}
+
+.animated-image {
+    width: 35%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    filter: grayscale(0%); /* Ini untuk menghilangkan efek greyscale saat tidak di-hover */
+    margin-right: 20px; /* Memberikan ruang di sebelah kanan gambar */
+}
+
+.animated-image:hover {
+    transform: scale(1.1); /* Membuat gambar lebih besar saat di-hover */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Menambahkan shadow saat di-hover */
+}
+
+/* CSS untuk mengurangi ukuran gambar, menambah animasi, dan memberikan shadow */
+img.note-float-left {
+    width: 35%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    filter: grayscale(0%); /* Ini untuk menghilangkan efek greyscale saat tidak di-hover */
+    margin-right: 20px; /* Memberikan ruang di sebelah kanan gambar */
+}
+
+/* Efek hover */
+img.note-float-left:hover {
+    transform: scale(1.1); /* Membuat gambar lebih besar saat di-hover */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Menambahkan shadow saat di-hover */
+}
+
+
+
 .logo a {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 800;
     float: left;
     font-family: courier;
@@ -75,11 +111,15 @@ section {
     margin-bottom: 50px;
 }
 
+
 .kolom .deskripsi {
     font-size: 20px;
     font-weight: bold;
-    font-family: 'comic sans ms';
+    font-family: 'Comic Sans MS', sans-serif;
     color: #364f6b;
+    letter-spacing: 1px; /* Menambah jarak antar huruf */
+    line-height: 1.5; /* Menambah jarak antar baris */
+    margin-bottom: 10px; /* Menambah spasi di bawah teks */
 }
 
 h2 {
@@ -202,11 +242,18 @@ h3 {
     line-height: 50px;
 }
 
+/* CSS untuk div copyright */
 #copyright {
     text-align: center;
-    width: 100%;
-    padding: 50px 0px 50px 0px;
-    margin-top: 50px;
+    padding: 10px 0;
+    margin-top: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* CSS untuk footer copyright */
+.footer-copyright {
+    padding-top: 50px;
 }
 
 @media screen and (max-width: 991.98px) {

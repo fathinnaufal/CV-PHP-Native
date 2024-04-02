@@ -81,6 +81,55 @@ function maximum_kata($isi,$maximum){
     return $isi;
 }
 
+function resizeImage($filename, $newWidth, $newHeight) {
+    list($width, $height) = getimagesize($filename);
+    $originalImage = imagecreatefromjpeg($filename);
+    $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
+    imagecopyresampled($resizedImage, $originalImage, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+    return $resizedImage;
+}
+
+function ambil_gambar_with_style($id) {
+    // Fungsi ambil_gambar yang ada sebelumnya
+    $gambar = ambil_gambar($id);
+
+    // Tambahkan atribut style untuk merubah ukuran gambar ke 35%
+    $gambar_with_style = "<img src=\"$gambar\" style=\"width: 35%;\" />";
+
+    return $gambar_with_style;
+}
+
+
+
+function generateCourseSection($id) {
+    // Ambil data dari fungsi-fungsi yang sudah ada
+    $kutipan = ambil_kutipan($id);
+    $judul = ambil_judul($id);
+    $isi = maximum_kata(ambil_isi($id), 30);
+    $link = buat_link_halaman($id);
+    $gambar = ambil_gambar($id);
+
+    // Output HTML dengan data yang sudah diambil
+    echo '<section id="courses">';
+    echo '    <div class="kolom">';
+    echo '        <p class="deskripsi">' . $kutipan . '</p>';
+    echo '        <h2>' . $judul . '</h2>';
+    echo '        ' . $isi;
+    echo '        <p><a href="' . $link . '" class="tbl-biru">Pelajari Lebih Lanjut</a></p>';
+    echo '    </div>';
+    echo '    <img src="' . $gambar . '" class="course-image" />';
+    echo '</section>';
+}
+
+
+// Lokasi gambar di server atau path dari MySQL
+$gambarPath = '../gambar/profile.png';
+
+// Ukuran baru yang diinginkan
+$newWidth = 35;
+$newHeight = 35;
+
+
 function tutors_foto($id){
     global $koneksi;
     $sql1   = "select * from tutors where id = '$id'";
@@ -95,6 +144,8 @@ function tutors_foto($id){
     }
 }
 
+
+
 function buat_link_tutors($id){
     global $koneksi;
     $sql1    = "select * from tutors where id = '$id'";
@@ -104,6 +155,8 @@ function buat_link_tutors($id){
     // http://localhost/website-company-profile/halaman.php/8/judul
     return url_dasar()."/tutors.php/$id/$nama";
 }
+
+
 
 function partners_foto($id){
     global $koneksi;
